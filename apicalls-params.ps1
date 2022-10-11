@@ -17,7 +17,7 @@ $text =
     Param($state)
     foreach($obj in $json)
     {   
-	  $time = $obj.created_at -split "T"
+          $time = $obj.created_at -split "T"
       if  ([dateTime]$time[0] -ge $filterDate -and $obj.state -eq $state)
           {
              "Pull request: " + $obj.number + "`n"
@@ -50,8 +50,8 @@ $smtpCredential = New-Object System.Management.Automation.PSCredential $smtpUser
 
 #send mail
 function send-mail{
-			param($MailFrom, $MailTo, $MailSubject, $MailBody, $SmtpServer, $smtpCredential)
-			#preview of email in console
+	 param($MailFrom, $MailTo, $MailSubject, $MailBody, $SmtpServer, $smtpCredential)
+	    #preview of email in console
             "`n"
             "sending mail from : " + $MailFrom
             "Sending mail to : " + $MailTo
